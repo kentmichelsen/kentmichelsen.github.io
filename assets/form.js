@@ -23,6 +23,7 @@ $(document).ready(function() {
                 //_replyto:email,
                  email:email,
 				_subject:subject,
+				subject:subject,
                 message:message,
                
             },
