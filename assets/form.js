@@ -22,7 +22,7 @@ $(document).ready(function() {
                 name:name,
                 //_replyto:email,
                  email:email,
-				_subject:subject,
+				subject:subject,
                 message:message,
                
             },
