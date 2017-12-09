@@ -58,16 +58,16 @@
       <div class="col-7">
         <h3 class="m-bottom">Skriv til mig</h3>
         <p id="thanks" style="display: none;">Din besked er sendt!<br>Tak for din henvendelse, jeg vender tilbage til dig hurtigst muligt!</p><p>Udfyld venligst formularen, hvis du er interesseret i at købe en bog, eller blot vil høre nærmere om den.</p>
-        <form id="contact_form" method="POST" class="form mt-md">
+        <form id="contact_form" class="form mt-md">
           <label>Navn *</label>
-          <input required type="text" name="name" class="form-control">
+          <input required type="text" name="name" id="name" class="form-control">
           <label>Emne *</label>
-          <input required type="text" name="_subject" id="bog" value="" class="form-control">
+          <input required type="text" name="_subject" id="subject" value="" class="form-control">
           <input type="hidden" name="_language" value="da" />
           <label>E-mail *</label>
-          <input required type="email" name="email" class="form-control">
+          <input required type="email" name="email" id="email" class="form-control">
           <label>Meddelelse *</label>
-          <textarea required name="message" class="form-control"></textarea>
+          <textarea required name="message" id="message" class="form-control"></textarea>
           <input type="hidden" name="_next" value="http://kentmichelsen.github.io/tak.html" />
           <input type="text" name="_gotcha" style="display:none" />
           <button id="send" type="submit" class="btn btn-default">Send </button>
@@ -103,7 +103,7 @@
 function addSubject(){var url_string = window.location.href; 
 var url = new URL(url_string);
 var paramValue = url.searchParams.get("book");
-document.forms["contact_form"]["bog"].value = paramValue;
+document.forms["contact_form"]["_subject"].value = paramValue;
 }addSubject();</script>
 </body>
 </html>

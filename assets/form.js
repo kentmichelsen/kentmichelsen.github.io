@@ -10,7 +10,7 @@ $(document).ready(function() {
 		//get thesubject
 		var subject = $('#subject').val();
         //get the comments
-        var comments = $('#comments').val();
+        var message = $('#message').val();
                     
         //pretend we don't need validation
         
@@ -20,10 +20,11 @@ $(document).ready(function() {
             method:'POST',
             data:{
                 name:name,
-                _replyto:email,
+                //_replyto:email,
                  email:email,
-                comments:comments,
-                subject:subject,
+				_subject:subject,
+                message:message,
+               
             },
             dataType:"json",
             success:function() {
