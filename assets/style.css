@@ -1,0 +1,417 @@
+/*  CSS Document - Kent Michelsen
+
+__/\\\________/\\\__/\\\\\\\\\\\\\\\__/\\\\\_____/\\\__/\\\\\\\\\\\\\\\_        
+ _\/\\\_____/\\\//__\/\\\///////////__\/\\\\\\___\/\\\_\///////\\\/////__       
+  _\/\\\__/\\\//_____\/\\\_____________\/\\\/\\\__\/\\\_______\/\\\_______      
+   _\/\\\\\\//\\\_____\/\\\\\\\\\\\_____\/\\\//\\\_\/\\\_______\/\\\_______     
+    _\/\\\//_\//\\\____\/\\\///////______\/\\\\//\\\\/\\\_______\/\\\_______    
+     _\/\\\____\//\\\___\/\\\_____________\/\\\_\//\\\/\\\_______\/\\\_______   
+      _\/\\\_____\//\\\__\/\\\_____________\/\\\__\//\\\\\\_______\/\\\_______  
+       _\/\\\______\//\\\_\/\\\\\\\\\\\\\\\_\/\\\___\//\\\\\_______\/\\\_______ 
+        _\///________\///__\///////////////__\///_____\/////________\///________
+                          
+*/ 
+
+@font-face {
+	font-family: "Sakkal Majalla";
+	src: url(majalla/majalla-webfont.eot?#iefix);
+	src: url(majalla/majalla-webfont.eot?#iefix) format("eot"), url(majalla/majalla-webfont.woff) format("woff"), url(majalla/majalla-webfont.ttf) format("truetype"), url(majalla/majalla-webfont.svg) format("svg")
+}
+@font-face {
+	font-family: 'TrumpGothicEastBold';
+	src: url("trump/trumpgoteasbol-webfont.eot");
+	src: url("trump/trumpgoteasbol-webfontd41d.eot?#iefix") format("embedded-opentype"), url("trump/trumpgoteasbol-webfont.woff") format("woff"), url("trump/trumpgoteasbol-webfont.ttf") format("truetype"), url("trump/trumpgoteasbol-webfont.svg#webfontIEdw22Dw") format("svg");
+	font-weight: normal;
+	font-style: normal
+}
+@font-face {
+	font-family: 'TrumpGothicEastMedium';
+	src: url("trump/trumpgoteasmed-webfont.eot");
+	src: url("trump/trumpgoteasmed-webfontd41d.eot?#iefix") format("embedded-opentype"), url("trump/trumpgoteasmed-webfont.woff") format("woff"), url("trump/trumpgoteasmed-webfont.ttf") format("truetype"), url("trump/trumpgoteasmed-webfont.svg#webfontbvGEs1qr") format("svg");
+	font-weight: normal;
+	font-style: normal
+}
+@font-face {
+	font-family: 'TrumpGothicEastRegular';
+	src: url("trump/trumpgoteasreg-webfont.eot");
+	src: url("trump/trumpgoteasreg-webfontd41d.eot?#iefix") format("embedded-opentype"), url("trump/trumpgoteasreg-webfont.woff") format("woff"), url("trump/trumpgoteasreg-webfont.ttf") format("truetype"), url("trump/trumpgoteasreg-webfont.svg#webfontFQQ6W2nc") format("svg");
+	font-weight: normal;
+	font-style: normal
+}
+* {
+	color: #000;
+}
+body {
+	background: rgb(34, 34, 34);
+	overflow: auto;
+}
+h1 {
+	color: #06251C;
+	display: none;
+}
+.topspace {
+	padding-top: 60px;
+}
+.topnav {
+	padding-top: 20px;
+	text-align: right;
+	overflow: hidden;
+	margin: auto;
+	color: #fff;
+	text-align: center;/* font-size: 12px;
+	font-weight: 100;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem; */
+}
+.topnav a {
+	color: #fff;
+	text-align: center;
+	padding: 10px 10px;
+	text-decoration: none;
+	font-family: "TrumpGothicEastRegular", "Arial Narrow", Impact, Calibri, Arial, sans-serif;
+	text-transform: uppercase;
+	font-size: 1.9em;
+	line-height: 1.5;
+	letter-spacing: 0.17rem;
+}
+.topnav a:hover {
+	color: #a0906d;
+	text-decoration: none;
+}
+a.selected {
+	color: #a0906d;
+	text-decoration: none;
+}
+.topnav .icon {
+	display: none;
+}
+.vertical-border {
+	background: url(vertical-border.gif) left top repeat-x;
+	height: 6px;
+	width: 100%;
+	z-index: 100
+}
+a {
+	text-decoration: none;
+	color: #a0906d;
+}
+a:hover {
+	color: #a0906d; /* #a0906d;  #343432  #94754e   #222222  rgb(34, 34, 34) */
+	text-decoration: underline;
+}
+.m-bottom {
+	margin-bottom: 20px;
+}
+.m-bottom-space {
+	margin-bottom: 40px;
+}
+.m-top {
+	margin-top: 40px;
+}
+.m-space {
+	margin-top: 80px;
+}
+.m-negativ {
+	margin-top: -30px;
+	padding-bottom: 40px;
+}
+.container {
+	padding-top: 80px;
+}
+.body-content {
+	background: #fff;
+	padding: 0 0 0 0;
+	position: relative;
+	z-index: 0 !important;
+}
+.body-content > .container {
+	position: relative;
+	top: 0px;
+	padding-bottom: 100px;
+}
+.topbar {
+	background: #000;
+	padding: 0;
+	width: 100%;
+	z-index: 100 !important;
+	color: #fff;
+}
+.book {
+	background: rgb(34, 34, 34); /* #272727 2b2724  #343432  #94754e   #222222  rgb(34, 34, 34) */
+	height: 380px;
+	width: 100%;
+	z-index: 100 !important;
+}
+.book h1, .book h2 {
+	color: #fff;
+}
+button {
+	height: 48px;
+	width: 180px;
+	text-align: center;
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 200;
+	background: #a0906d;
+	border: 0px solid #fff;
+	border-radius: 4px;
+	margin: 20px 0px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	outline: none;
+	text-transform: uppercase;
+}
+button:hover {
+	background: rgb(34, 34, 34);
+	color: #fff;
+}
+button:active {
+	outline: none;
+}
+.btn-secondary {
+	border: 1px solid #FE7880;
+	color: #FE7880;
+}
+.btn-secondary:hover {
+	background: #FE7880;
+	color: #fff;
+}
+.line {
+	height: 1px;
+	width: 100%;
+	background: #D6D6D8;
+	margin: 80px 0;
+}
+.grid-display {
+	margin: 20px 0;
+}
+.grid-display [class^="col"] {
+	background: #FBCED1;
+	border: 1px solid #FE7880;
+	border-radius: 4px;
+	box-sizing: border-box;
+	text-align: center;
+}
+.grid-display [class^="col"] p {
+	color: #FE7880;
+	font-size: 0.8rem;
+}
+pre {
+	margin-top: 30px;
+	overflow: auto;
+	background: #fff;
+	border-radius: 4px;
+	border: 1px solid #D8DCE6;
+	padding: 24px 0;
+}
+code, .tag, .el, .name, .content, .comment {
+	font-family: monospace;
+	font-size: 1.1rem;
+	line-height: 1.2rem;
+	color: #636366;
+}
+.el {
+	color: #FE7880;
+}
+.name {
+	color: #F9B42D;
+}
+.content {
+	color: #75C050;
+}
+.comment {
+	color: #B6CAD2;
+}
+footer {
+	background: rgb(34, 34, 34);
+	padding-bottom: 80px;/* background-image: linear-gradient(#000, #000); background:url(bg-footer.gif) repeat-x;z-index: 0 !important; */
+}
+footer a, footer p {
+	text-decoration: none;
+	line-height: 34px;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 100;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+}
+footer a:hover {
+	color: #a0906d;
+	text-decoration: none;
+}
+/* IMAGES */
+
+.img a {
+	border: none;
+}
+.img {
+	background-size: contain;
+	background-repeat: no-repeat;
+	border: none;
+}
+.img-logo {
+	background-image: url('logo-michelsen.svg');
+	background-size: contain;
+	height: 90px;
+	width: 90px;
+	padding-bottom: 0px;
+}
+.img-logo-top {
+	background-size: contain;
+	margin-top: -15px;
+}
+/* TABLE */
+
+
+
+table, th, td {
+	border: none;
+}
+table {
+	width: 100%;
+	display: table;
+	border-collapse: collapse;
+}
+th, td {
+	border-bottom: 1px solid #ddd;
+}
+td, th {
+	padding: 10px 5px;
+	display: table-cell;
+	text-align: left;
+	
+	vertical-align: middle;
+	border-radius: 0px;
+	font-size:1.125rem;
+}
+
+td {font-weight:200;}
+
+td.txar, th.txar  {text-align: right;}
+td.txal1, th.txal1  {width: 35%;text-align: left;}
+td.txal2, th.txal2  {text-align: left;}
+
+/*  FORM  */
+
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857;
+	color: #555555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+.form-control:focus {
+	border-color: #66afe9;
+	outline: 0;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+ .form-control::-moz-placeholder {
+ color: #999;
+ opacity: 1;
+}
+ .form-control:-ms-input-placeholder {
+ color: #999;
+}
+ .form-control::-webkit-input-placeholder {
+ color: #999;
+}
+ .form-control::-ms-expand {
+ border: 0;
+ background-color: transparent;
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+	background-color: #eeeeee;
+	opacity: 1;
+}
+.form-control[disabled], fieldset[disabled] .form-control {
+	cursor: not-allowed;
+}
+textarea.form-control {
+	height: auto;
+}
+input[type="search"] {
+	-webkit-appearance: none;
+}
+.p-md {
+	padding: 30px !important;
+}
+form {
+	width: 100%;
+}
+form label {
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: .8em;
+	margin-bottom: 10px;
+}
+form .form-control {
+	padding: 15px;
+	height: auto;
+	background: #f5f5f5;
+	border: 0;
+	border-radius: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin-bottom: 25px;
+	font-size: 1.2em;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+ @media screen and (max-width: 768px) {
+form .form-control {
+	padding: 10px;
+}
+/* Kent justering af topmenu og tabel*/
+.topnav {padding: 0;}
+.topspace {padding: 0;}
+td.txar, th.txar  {width:15%;}
+td, th  {font-size:1rem;}
+}
+
+form .form-control:focus {
+	outline: none !important;
+	box-shadow: inherit !important;
+	background: #a0906d; /* rgb(34, 34, 34); */
+	color: #fff;
+}
+form span {
+	font-size: 1em;
+}
+ @media screen and (max-width: 768px) {
+form span.p-md {
+	display: block;
+	padding: 20px 0 !important;
+}
+}
+form textarea.form-control {
+	height: 150px;
+}
+
+/* Kent Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
+
+@media only screen and (min-width: 481px) {
+.topnav {padding: 0;}
+
+}
+
+/* FORM END */
+
+/* === MEDIA QUERIES === */
+
+@media only screen and (min-width: 720px) {
+.book {
+	height: 380px;
+}
+}
