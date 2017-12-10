@@ -59,7 +59,9 @@
       </div>
       <div class="col-7">
         <h3 class="m-bottom">Skriv til mig</h3>
-        <p id="thanks" style="display: none;">Din besked er sendt!<br>Tak for din henvendelse, jeg vender tilbage til dig hurtigst muligt!</p><p>Udfyld venligst formularen, hvis du er interesseret i at købe en bog, eller blot vil høre nærmere om den.</p>
+        <p id="thanks" style="display: none;">Din besked er sendt!<br>
+          Tak for din henvendelse, jeg vender tilbage til dig hurtigst muligt!</p>
+        <p>Udfyld venligst formularen, hvis du er interesseret i at købe en bog, eller blot vil høre nærmere om den.</p>
         <form id="contact_form" class="form mt-md">
           <label>Navn *</label>
           <input required type="text" name="name" id="name" class="form-control">
@@ -99,13 +101,30 @@
     </div>
   </div>
 </footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="assets/form.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+<script src="assets/form.js"></script> 
 <script>
 function addSubject(){var url_string = window.location.href; 
 var url = new URL(url_string);
 var paramValue = url.searchParams.get("book");
 document.forms["contact_form"]["_subject"].value = paramValue;
-}addSubject();</script>
+}addSubject();</script> 
+<script type="text/javascript">
+var sc_project=11569174; 
+var sc_invisible=1; 
+var sc_security="d319640c"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript>
+<div class="statcounter"><a title="Web Analytics
+Made Easy - StatCounter" href="http://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="//c.statcounter.com/11569174/0/d319640c/1/" alt="Web
+Analytics Made Easy - StatCounter"></a></div>
+</noscript>
 </body>
 </html>
