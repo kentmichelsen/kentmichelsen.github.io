@@ -45,10 +45,7 @@ body {
 	background: rgb(34, 34, 34);
 	overflow: auto;
 }
-h1 {
-	color: #06251C;
-	display: none;
-}
+
 .topspace {
 	padding-top: 10px;
 }
