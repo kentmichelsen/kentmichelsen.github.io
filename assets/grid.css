@@ -3,7 +3,7 @@ html,body {height:100%;width:100%;margin:0;padding:0;left:0;top:0;font-size:100%
 /* ROOT FONT STYLES */
 *{font-family:'Sakkal Majalla',Helvetica,sans-serif;color:#000;line-height:1.5}
 /* === TYPOGRAPHY === */
-h1 {color: rgb(34,34,34);text-transform: uppercase;font-size: 1.5em;}h2,h3{font-size:1.275rem;text-transform:uppercase;}h4{font-size:1.125rem}h5{font-size:1rem}h6{font-size:.875rem}p{font-size:1.125rem;font-weight:200;line-height:1.8}.font-light{font-weight:300}.font-regular{font-weight:400}.font-heavy{font-weight:700}
+h1 {color: rgb(34,34,34);text-transform: uppercase;font-size: 1.4em;}h2,h3{font-size:1.275rem;text-transform:uppercase;}h4{font-size:1.125rem}h5{font-size:1rem}h6{font-size:.875rem}p{font-size:1.125rem;font-weight:200;line-height:1.8}.font-light{font-weight:300}.font-regular{font-weight:400}.font-heavy{font-weight:700}
 /* === POSITIONING === */
 .left {text-align:left}.right{text-align:right}.center{text-align:center;margin-left:auto;margin-right:auto}.justify{text-align:justify}
 /* === GRID SYSTEM === */
