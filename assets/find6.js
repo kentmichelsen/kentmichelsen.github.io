@@ -67,7 +67,7 @@ coolfind.create_find_div = function()
 	find_div.id = "cool_find_div";
 	find_div.style.cssText = find_div_style;
 	
-	find_html += "<button class='cool_find_btn' id='cool_find_btn'"+ 
+	find_html += "<button value='' class='cool_find_btn' id='cool_find_btn'"+ 
 		" title='Søg på denne side' onclick='coolfind.find_menu(this)'>"+
 		coolfind.find_button_html+"</button> "; 
 
@@ -86,7 +86,7 @@ coolfind.create_find_div = function()
 		' onchange="coolfind.resettext();" placeholder="Søg på denne side">'+
 		'<span id="cool_find_msg"> </span></form>';
 	
-	find_html += "<button id='cool_find_pre' class='cool_find_btn'"+ 
+	find_html += "<button value='' id='cool_find_pre' class='cool_find_btn'"+ 
 		//" style='"+button_style+"'"+ 
 		" title='Find forrige' onclick='coolfind.findprev();'>&#60;</button>"+ //&#9650;
 		"<button class='cool_find_btn' id='cool_find_next'"+ // Version 6.0b - Added id='cool_find_next' for accessibility
