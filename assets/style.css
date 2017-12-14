@@ -14,27 +14,27 @@ __/\\\________/\\\__/\\\\\\\\\\\\\\\__/\\\\\_____/\\\__/\\\\\\\\\\\\\\\_
 
 @font-face {
 	font-family: "Sakkal Majalla";
-	src: url(majalla/majalla-webfont.eot?#iefix);
-	src: url(majalla/majalla-webfont.eot?#iefix) format("eot"), url(majalla/majalla-webfont.woff) format("woff"), url(majalla/majalla-webfont.ttf) format("truetype"), url(majalla/majalla-webfont.svg) format("svg")
+	src: url(font/majalla/majalla-webfont.eot?#iefix);
+	src: url(font/majalla/majalla-webfont.eot?#iefix) format("eot"), url(font/majalla/majalla-webfont.woff) format("woff"), url(font/majalla/majalla-webfont.ttf) format("truetype"), url(font/majalla/majalla-webfont.svg) format("svg")
 }
 @font-face {
 	font-family: 'TrumpGothicEastBold';
-	src: url("trump/trumpgoteasbol-webfont.eot");
-	src: url("trump/trumpgoteasbol-webfontd41d.eot?#iefix") format("embedded-opentype"), url("trump/trumpgoteasbol-webfont.woff") format("woff"), url("trump/trumpgoteasbol-webfont.ttf") format("truetype"), url("trump/trumpgoteasbol-webfont.svg#webfontIEdw22Dw") format("svg");
+	src: url("font/trump/trumpgoteasbol-webfont.eot");
+	src: url("font/trump/trumpgoteasbol-webfontd41d.eot?#iefix") format("embedded-opentype"), url("font/trump/trumpgoteasbol-webfont.woff") format("woff"), url("font/trump/trumpgoteasbol-webfont.ttf") format("truetype"), url("font/trump/trumpgoteasbol-webfont.svg#webfontIEdw22Dw") format("svg");
 	font-weight: normal;
 	font-style: normal
 }
 @font-face {
 	font-family: 'TrumpGothicEastMedium';
-	src: url("trump/trumpgoteasmed-webfont.eot");
-	src: url("trump/trumpgoteasmed-webfontd41d.eot?#iefix") format("embedded-opentype"), url("trump/trumpgoteasmed-webfont.woff") format("woff"), url("trump/trumpgoteasmed-webfont.ttf") format("truetype"), url("trump/trumpgoteasmed-webfont.svg#webfontbvGEs1qr") format("svg");
+	src: url("font/trump/trumpgoteasmed-webfont.eot");
+	src: url("font/trump/trumpgoteasmed-webfontd41d.eot?#iefix") format("embedded-opentype"), url("font/trump/trumpgoteasmed-webfont.woff") format("woff"), url("font/trump/trumpgoteasmed-webfont.ttf") format("truetype"), url("font/trump/trumpgoteasmed-webfont.svg#webfontbvGEs1qr") format("svg");
 	font-weight: normal;
 	font-style: normal
 }
 @font-face {
 	font-family: 'TrumpGothicEastRegular';
-	src: url("trump/trumpgoteasreg-webfont.eot");
-	src: url("trump/trumpgoteasreg-webfontd41d.eot?#iefix") format("embedded-opentype"), url("trump/trumpgoteasreg-webfont.woff") format("woff"), url("trump/trumpgoteasreg-webfont.ttf") format("truetype"), url("trump/trumpgoteasreg-webfont.svg#webfontFQQ6W2nc") format("svg");
+	src: url("font/trump/trumpgoteasreg-webfont.eot");
+	src: url("font/trump/trumpgoteasreg-webfontd41d.eot?#iefix") format("embedded-opentype"), url("font/trump/trumpgoteasreg-webfont.woff") format("woff"), url("font/trump/trumpgoteasreg-webfont.ttf") format("truetype"), url("font/trump/trumpgoteasreg-webfont.svg#webfontFQQ6W2nc") format("svg");
 	font-weight: normal;
 	font-style: normal
 }
@@ -47,8 +47,35 @@ body {
 }
 
 .topspace {
-	padding-top: 10px;
+	padding-top:90px;
 }
+
+
+
+/* LOGO & IMAGES */
+
+.img a {
+	border: none;
+}
+.img {
+	background-size: contain;
+	background-repeat: no-repeat;
+	border: none;
+}
+.img-logo {
+	background-image: url('img/logo-k.svg');
+	background-size: contain;
+	height: 90px;
+	width: 90px;
+	padding-bottom: 0px;
+}
+.img-logo-top {
+	background-size: contain;
+	margin-top: -15px;
+}
+.logo {width:170px;}
+/* LOGO END */
+
 .topnav {
 	padding-top: 20px;
 	text-align: right;
@@ -83,7 +110,7 @@ a.selected {
 	display: none;
 }
 .vertical-border {
-	background: url(vertical-border.gif) left top repeat-x;
+	background: url(img/vertical.gif) left top repeat-x;
 	height: 6px;
 	width: 100%;
 	z-index: 100
@@ -236,28 +263,10 @@ footer a:hover {
 	color: #a0906d;
 	text-decoration: none;
 }
-/* IMAGES */
 
-.img a {
-	border: none;
-}
-.img {
-	background-size: contain;
-	background-repeat: no-repeat;
-	border: none;
-}
-.img-logo {
-	background-image: url('logo-michelsen.svg');
-	background-size: contain;
-	height: 90px;
-	width: 90px;
-	padding-bottom: 0px;
-}
-.img-logo-top {
-	background-size: contain;
-	margin-top: -15px;
-}
-.logo {width:170px; }
+
+
+
 /* TABLE */
 
 
@@ -402,7 +411,8 @@ form .form-control {
 .topspace {padding: 0;}
 td.txar, th.txar  {width:15%;}
 td, th  {font-size:1rem;}
-.logo {width:140px; }
+.logo {width:170px; }
+.topnav a {font-size: 1.6em;line-height: 1.4;}
 }
 
 form .form-control:focus {
@@ -437,7 +447,7 @@ form textarea.form-control {
 
 @media only screen and (min-width: 720px) {
 .book {
-	height: 380px;
+	height: 450px;
 }
 }
 

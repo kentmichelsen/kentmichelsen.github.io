@@ -75,7 +75,7 @@ coolfind.create_find_div = function()
 	{
 		find_div.style.position = "fixed";
 		//find_div.style.bottom = "0.5em";
-		find_div.style.top = "394px";
+		find_div.style.top = "464px";
 		find_div.style.right = "1em";
 	}
 	find_script.parentNode.insertBefore(find_div, find_script.nextSibling);

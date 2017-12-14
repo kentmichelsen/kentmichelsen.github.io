@@ -32,7 +32,7 @@ $(document).ready(function() {
                 console.log('success'); 
                 //$('#formBlock').hide();
                 //$('#thankyouBlock').show();
-				top.location.href="tak.html";
+				top.location.href="/tak.html";
             }   
 
         });     
