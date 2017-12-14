@@ -222,8 +222,7 @@ button:active {
 	font-weight:normal;
 	/*text-transform: uppercase;*/
 	text-transform:capitalize !important;
-	width:50px;
-	
+	width:50px !important;
 }
 
 #myBtn:hover {
