@@ -222,7 +222,6 @@ button:active {
 	font-weight:normal;
 	/*text-transform: uppercase;*/
 	text-transform:capitalize !important;
-	padding:0px !important;
 	width:50px !important;
 }
 
@@ -445,6 +444,7 @@ td.txar, th.txar  {width:15%;}
 td, th  {font-size:1rem;}
 .logo {width:170px; }
 .topnav a {font-size: 1.6em;line-height: 1.4;}
+#myBtn {padding-left:5px !important;}
 }
 
 form .form-control:focus {
