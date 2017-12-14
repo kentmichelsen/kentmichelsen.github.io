@@ -200,6 +200,38 @@ button:active {
 	background: #FE7880;
 	color: #fff;
 }
+
+/*  back to top button */
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  text-align: center;
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 200;
+	background: #a0906d;
+	border: 0px solid #fff;
+	border-radius: 4px;
+	margin: 10px 0px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	outline: none;
+	font-weight:normal;
+	/*text-transform: uppercase;*/
+	text-transform:capitalize !important;
+	width:50px;
+	
+}
+
+#myBtn:hover {
+  background: rgb(34, 34, 34);
+	color: #fff;
+}
+
+
 .line {
 	height: 1px;
 	width: 100%;
