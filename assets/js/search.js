@@ -58,10 +58,10 @@ coolfind.create_find_div = function()
 	if (typeof SVGRect == "undefined")
 		coolfind.find_button_html = "Søg";
 	else
-		coolfind.find_button_html = '<svg width="1.15em" height="1.15em" viewbox="0 0 30 30">'+
-			'<circle cx="18" cy="12" r="8" stroke="#ccc" stroke-width="2" fill="#fff" fill-opacity="0.0" />'+
-			'<line x1="13" y1="17" x2="0" y2="30" stroke="#ccc" stroke-width="2" />'+
-			'<line x1="10" y1="20" x2="0" y2="30" stroke="#ccc" stroke-width="4" />'+
+		coolfind.find_button_html = '<svg width="1.35em" height="1.35em" viewbox="0 0 30 30">'+
+			'<circle cx="18" cy="12" r="8" stroke="#E3E3E3" stroke-width="3" fill="#fff" fill-opacity="0.0" />'+
+			'<line x1="13" y1="17" x2="0" y2="30" stroke="#E3E3E3" stroke-width="2" />'+
+			'<line x1="10" y1="20" x2="0" y2="30" stroke="#E3E3E3" stroke-width="4" />'+
 			'</svg>'; // 
 	
 	find_div.id = "cool_find_div";
