@@ -231,6 +231,10 @@ button:active {
 	color: #fff;
 }
 
+.topBtn {
+  width:26px;padding-top:5px;
+}
+
 
 .line {
 	height: 1px;
