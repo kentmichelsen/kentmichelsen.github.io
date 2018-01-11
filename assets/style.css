@@ -110,10 +110,10 @@ a.selected {
 	display: none;
 }
 .vertical-border {
-	background: url(img/vertical.gif) left top repeat-x;
+	background: url(img/vertical.svg) left top repeat-x;
 	height: 6px;
 	width: 100%;
-	z-index: 100
+    z-index: 100;
 }
 a {
 	text-decoration: none;
