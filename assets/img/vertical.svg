@@ -17,8 +17,8 @@
 <metadata>
 	<sfw  xmlns="&ns_sfw;">
 		<slices></slices>
-		<sliceSourceBounds  width="-32766" height="-32766" x="8592" y="24274" bottomLeftOrigin="true"></sliceSourceBounds>
+		<sliceSourceBounds  width="1" height="4" x="0" y="-5" bottomLeftOrigin="true"></sliceSourceBounds>
 	</sfw>
 </metadata>
-<rect y="1" fill="#B3B3B3" width="1" height="4"/>
+<rect y="1" fill="#DBD8D1" width="1" height="4"/>
 </svg>
