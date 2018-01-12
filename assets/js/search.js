@@ -1,23 +1,3 @@
-/* 	Cool Javascript Find on this Page - Fixed Position Edition
-	(or Version 6.0)
-	
-	Written by Jeff Baker on May 20, 2016.
-	Copyright 2016 by Jeff Baker - 
-	Version 6.0 created 5/20/2016
-	Version 6.0c updated 7/15/2016
-	http://www.seabreezecomputers.com/tips/find6.htm
-	Paste the following javascript call in your HTML web page where
-	you want a button called "Find" or for newer browsers
-	a button with a svg drawing of a magnifying glass:
-
-	<script type="text/javascript" id="cool_find_script" src="find6.js">
-	</script>
-	
-	NOTE: Or if "lock_button" below is set to 1 then the find button will be
-	locked in a fixed position at the bottom right corner of the browser window.
-	
-*/
-
 // Create find_settings object
 var coolfind = { 
 
