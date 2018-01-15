@@ -110,7 +110,7 @@ a.selected {
 	display: none;
 }
 .vertical-border {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 6'%3E%3Crect width='3' height='6' fill='%23FFF'/%3E%3Crect width='1' height='6' fill='%23ccc'/%3E%3C/svg%3E") left bottom repeat-x;
+	background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 6'%3E%3Crect width='3' height='6' fill='%23FFF'/%3E%3Crect width='1' height='6' fill='%23ccc'/%3E%3C/svg%3E") left bottom repeat-x;
 	/* background: url(img/vertical.svg) */
 	height: 6px;
 	width: 100%;
