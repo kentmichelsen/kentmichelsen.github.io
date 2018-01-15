@@ -1,16 +1,16 @@
 /*  CSS Document - Kent Michelsen
 
-__/\\\________/\\\__/\\\\\\\\\\\\\\\__/\\\\\_____/\\\__/\\\\\\\\\\\\\\\_        
- _\/\\\_____/\\\//__\/\\\///////////__\/\\\\\\___\/\\\_\///////\\\/////__       
-  _\/\\\__/\\\//_____\/\\\_____________\/\\\/\\\__\/\\\_______\/\\\_______      
-   _\/\\\\\\//\\\_____\/\\\\\\\\\\\_____\/\\\//\\\_\/\\\_______\/\\\_______     
-    _\/\\\//_\//\\\____\/\\\///////______\/\\\\//\\\\/\\\_______\/\\\_______    
-     _\/\\\____\//\\\___\/\\\_____________\/\\\_\//\\\/\\\_______\/\\\_______   
-      _\/\\\_____\//\\\__\/\\\_____________\/\\\__\//\\\\\\_______\/\\\_______  
-       _\/\\\______\//\\\_\/\\\\\\\\\\\\\\\_\/\\\___\//\\\\\_______\/\\\_______ 
+__/\\\________/\\\__/\\\\\\\\\\\\\\\__/\\\\\_____/\\\__/\\\\\\\\\\\\\\\_
+ _\/\\\_____/\\\//__\/\\\///////////__\/\\\\\\___\/\\\_\///////\\\/////__
+  _\/\\\__/\\\//_____\/\\\_____________\/\\\/\\\__\/\\\_______\/\\\_______
+   _\/\\\\\\//\\\_____\/\\\\\\\\\\\_____\/\\\//\\\_\/\\\_______\/\\\_______
+    _\/\\\//_\//\\\____\/\\\///////______\/\\\\//\\\\/\\\_______\/\\\_______
+     _\/\\\____\//\\\___\/\\\_____________\/\\\_\//\\\/\\\_______\/\\\_______
+      _\/\\\_____\//\\\__\/\\\_____________\/\\\__\//\\\\\\_______\/\\\_______
+       _\/\\\______\//\\\_\/\\\\\\\\\\\\\\\_\/\\\___\//\\\\\_______\/\\\_______
         _\///________\///__\///////////////__\///_____\/////________\///________
-                          
-*/ 
+
+*/
 
 @font-face {
 	font-family: "Sakkal Majalla";
@@ -110,7 +110,8 @@ a.selected {
 	display: none;
 }
 .vertical-border {
-	background: url(img/vertical.svg) left bottom repeat-x;
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 6'%3E%3Crect width='3' height='6' fill='%23FFF'/%3E%3Crect width='1' height='6' fill='%23ccc'/%3E%3C/svg%3E");
+	/* background: url(img/vertical.svg) */ left bottom repeat-x;
 	height: 6px;
 	width: 100%;
     z-index: 100;
@@ -322,7 +323,7 @@ td, th {
 	padding: 10px 5px;
 	display: table-cell;
 	text-align: left;
-	
+
 	vertical-align: middle;
 	border-radius: 0px;
 	font-size:1.125rem;
@@ -337,9 +338,9 @@ td.txal2, th.txal2  {text-align: left;}
 
 /* SEARCH */
 
-	
+
 #cool_find_next, #cool_find_pre {font-size:0.8em;}
-	
+
 #cool_find_next, #cool_find_pre, .cool_find_btn {
 	/* background-color:#fff !important; */
 	 background-color:transparent !important;
@@ -355,9 +356,9 @@ td.txal2, th.txal2  {text-align: left;}
 
 #cool_find_text  {  outline: 0; font-size:1em; height: 32px;color: #222; margin-left:20px; -webkit-appearance: none;
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);}
-	
+
 .search_count  {color:#ccc; }
-	
+
 /* SEARCH END */
 
 /*  FORM  */
