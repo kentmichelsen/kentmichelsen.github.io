@@ -1,5 +1,8 @@
+function scrollFunction(){document.body.scrollTop>800||document.documentElement.scrollTop>800?document.getElementById("myBtn").style.display="block":document.getElementById("myBtn").style.display="none"}function topFunction(){document.body.scrollTop=0,document.documentElement.scrollTop=0}window.onscroll=function(){scrollFunction()};
+
+
 // Create find_settings object
-var coolfind = { 
+var coolfind = {
 
 /* EDIT THE FOLLOWING VARIABLES */
 lock_button: 1, // 0 = Don't lock button at bottom of screen; 1 = Lock button in fixed position
@@ -33,7 +36,7 @@ coolfind.create_find_div = function()
 	coolfind.addCss(".cool_find_btn {"+button_style+"}"); // Comment out this line if you are using your own css for the buttons
 	coolfind.addCss(".cool_find_menu {"+menu_style+"}"); // Comment out this line if you are using your own css for the find menu
 	coolfind.addCss(".cool_find_input {"+input_style+"}"); // Comment out this line if you are using your own css for the input search box
-	
+
 	// If browser does not support svg
 	if (typeof SVGRect == "undefined")
 		coolfind.find_button_html = "Søg";
@@ -42,14 +45,14 @@ coolfind.create_find_div = function()
 			'<circle cx="18" cy="12" r="8" stroke="#E3E3E3" stroke-width="3" fill="#fff" fill-opacity="0.0" />'+
 			'<line x1="13" y1="17" x2="0" y2="30" stroke="#E3E3E3" stroke-width="2" />'+
 			'<line x1="10" y1="20" x2="0" y2="30" stroke="#E3E3E3" stroke-width="4" />'+
-			'</svg>'; // 
-	
+			'</svg>'; //
+
 	find_div.id = "cool_find_div";
 	find_div.style.cssText = find_div_style;
-	
-	find_html += "<button value='' class='cool_find_btn' id='cool_find_btn'"+ 
+
+	find_html += "<button value='' class='cool_find_btn' id='cool_find_btn'"+
 		" title='Søg på denne side' onclick='coolfind.find_menu(this)'>"+
-		coolfind.find_button_html+"</button> "; 
+		coolfind.find_button_html+"</button> ";
 
 	if (coolfind.lock_button)
 	{
@@ -59,23 +62,23 @@ coolfind.create_find_div = function()
 		find_div.style.right = "1em";
 	}
 	find_script.parentNode.insertBefore(find_div, find_script.nextSibling);
-	
+
 	find_html += "<span class='cool_find_menu' id='cool_find_menu'>" +
 		'<form id="search-control" onsubmit="return false;" style="display: inline">' +
 		'<input type="search" class="cool_find_input" id="cool_find_text"' +
 		' onchange="coolfind.resettext();" placeholder="Søg på denne side">'+
 		'<span id="cool_find_msg"> </span></form>';
-	
-	find_html += "<button value='' id='cool_find_pre' class='cool_find_btn'"+ 
-		//" style='"+button_style+"'"+ 
+
+	find_html += "<button value='' id='cool_find_pre' class='cool_find_btn'"+
+		//" style='"+button_style+"'"+
 		" title='Find forrige' onclick='coolfind.findprev();'>&#60;</button>"+ //&#9650;
 		"<button class='cool_find_btn' id='cool_find_next'"+ // Version 6.0b - Added id='cool_find_next' for accessibility
 		//" style='"+button_style+"'"+
 		" title='Find næste' onclick='coolfind.findit();'>&#62;</button> "; //&#9660;
-		
+
 	find_html += "</span>";
 	find_div.innerHTML = find_html;
-	
+
 	// Check to see if css rules exist for hightlight and find_selected.
 	var sheets = document.styleSheets;
 	for (var i=0; i < sheets.length; i++)
@@ -108,7 +111,7 @@ coolfind.find_menu =  function(that)
 		else // IE < 9
 			document.attachEvent('onkeydown', coolfind.checkkey);
 		// Put cursor focus in the text box
-		textbox.focus(); 
+		textbox.focus();
 		textbox.select(); // ver 5.1 - 10/17/2014 - Select the text to search for
 		textbox.setSelectionRange(0, 9999); // ver. 5.3 - 5/15/2015 - iOS woould not select without this
 	}
@@ -134,11 +137,11 @@ coolfind.addCss = function(css)
 	style.type = 'text/css';
 	if (style.styleSheet) // IE < 9
 		style.styleSheet.cssText = css;
-	else 
+	else
 		style.appendChild(document.createTextNode(css));
-	
+
 	document.getElementsByTagName("head")[0].appendChild(style);
-	
+
 }
 
 
@@ -146,11 +149,11 @@ coolfind.highlight = function(word, node)
 {
 	if (!node)
 		node = document.body;
-	
+
 	//var re = new RegExp(word, "i"); // regular expression of the search term // Ver 6.0c - Not using regular expressions search now
-	
+
 	for (node=node.firstChild; node; node=node.nextSibling)
-	{	
+	{
 		//console.log(node.nodeName);
 		if (node.nodeType == 3) // text node
 		{
@@ -158,22 +161,22 @@ coolfind.highlight = function(word, node)
 			//console.log(n.nodeValue);
 			var match_pos = 0;
 			//for (match_pos; match_pos > -1; n=after)
-			{	
+			{
 				//match_pos = n.nodeValue.search(re); // Ver 5.3b - Now NOT using regular expression because couldn't search for $ or ^
 				match_pos = n.nodeValue.toLowerCase().indexOf(word.toLowerCase()); // Ver 5.3b - Using toLowerCase().indexOf instead
-				
+
 				if (match_pos > -1) // if we found a match
 				{
 					var before = n.nodeValue.substr(0, match_pos); // split into a part before the match
 					var middle = n.nodeValue.substr(match_pos, word.length); // the matched word to preserve case
-					//var after = n.splitText(match_pos+word.length);		
-					var after = document.createTextNode(n.nodeValue.substr(match_pos+word.length)); // and the part after the match	
+					//var after = n.splitText(match_pos+word.length);
+					var after = document.createTextNode(n.nodeValue.substr(match_pos+word.length)); // and the part after the match
 					var highlight_span = document.createElement("span"); // create a span in the middle
 			        if (coolfind.found_highlight_rule == 1)
 						highlight_span.className = "highlight";
-					else 
-						highlight_span.style.backgroundColor = "yellow";	
-			        
+					else
+						highlight_span.style.backgroundColor = "yellow";
+
 					highlight_span.appendChild(document.createTextNode(middle)); // insert word as textNode in new span
 					n.nodeValue = before; // Turn node data into before
 					n.parentNode.insertBefore(after, n.nextSibling); // insert after
@@ -187,7 +190,7 @@ coolfind.highlight = function(word, node)
 		else // if not text node then it must be another element
 		{
 			// nodeType 1 = element
-			if (node.nodeType == 1 && node.nodeName.match(/textarea/i) && !coolfind.getStyle(node, "display").match(/none/i)) 
+			if (node.nodeType == 1 && node.nodeName.match(/textarea/i) && !coolfind.getStyle(node, "display").match(/none/i))
 				coolfind.textarea2pre(node);
 			else
 			{
@@ -197,7 +200,7 @@ coolfind.highlight = function(word, node)
 			}
 		}
 	}
-	
+
 
 } // end function highlight(word, node)
 
@@ -206,18 +209,18 @@ coolfind.unhighlight = function()
 {
 	for (var i = 0; i < coolfind.highlights.length; i++)
 	{
-		
+
 		var the_text_node = coolfind.highlights[i].firstChild; // firstChild is the textnode in the highlighted span
-	
+
 		var parent_node = coolfind.highlights[i].parentNode; // the parent element of the highlighted span
-		
+
 		// First replace each span with its text node nodeValue
 		if (coolfind.highlights[i].parentNode)
 		{
 			coolfind.highlights[i].parentNode.replaceChild(the_text_node, coolfind.highlights[i]);
 			if (i == coolfind.find_pointer) coolfind.selectElementContents(the_text_node); // ver 5.1 - 10/17/2014 - select current find
 			parent_node.normalize(); // The normalize() method removes empty Text nodes, and joins adjacent Text nodes in an element
-			coolfind.normalize(parent_node); // Ver 5.2 - 3/10/2015 - normalize() is incorrect in IE. It will combine text nodes but may leave empty text nodes. So added normalize(node) function below		
+			coolfind.normalize(parent_node); // Ver 5.2 - 3/10/2015 - normalize() is incorrect in IE. It will combine text nodes but may leave empty text nodes. So added normalize(node) function below
 		}
 	}
 	// Now reset highlights array
@@ -241,45 +244,45 @@ coolfind.normalize = function(node) {
 }
 
 
-coolfind.findit = function () 
+coolfind.findit = function ()
 {
 	var cool_find_msg = document.getElementById('cool_find_msg');
 	var findwindow = document.getElementById('cool_find_menu');
-	
+
 	// put the value of the textbox in string
 	var string = document.getElementById('cool_find_text').value;
-	
+
 	// 8-9-2010 Turn DIV to hidden just while searching so doesn't find the text in the window
 	findwindow.style.visibility = 'hidden';
 	//findwindow.style.display = 'none';
-		
+
 	// if the text has not been changed and we have previous finds
 	if (coolfind.find_text.toLowerCase() == document.getElementById('cool_find_text').value.toLowerCase() &&
-		coolfind.find_pointer >= 0) 
-	{	
+		coolfind.find_pointer >= 0)
+	{
 		coolfind.findnext(); // Find the next occurrence
 	}
 	else
 	{
 		coolfind.unhighlight(); // Remove highlights of any previous finds
-		
+
 		if (string == '') // if empty string
 		{
 			cool_find_msg.innerHTML = "";
 			findwindow.style.visibility = 'visible';
 			return;
 		}
-		
+
 		coolfind.find_text = string;
-		
+
 		// Ver 5.0a - 7/18/2014. Next four lines because find_root_node won't exist until doc loads
 		if (coolfind.find_root_node != null)
 			var node = document.getElementById(coolfind.find_root_node);
 		else
 			var node = null;
-		
+
 		coolfind.highlight(string, node); // highlight all occurrences of search string
-		
+
 		if (coolfind.highlights.length > 0) // if we found occurences
 		{
 			coolfind.find_pointer = -1;
@@ -288,50 +291,50 @@ coolfind.findit = function ()
 		else
 		{
 			cool_find_msg.innerHTML = "&nbsp;<span class='search_count'>0 af 0</span>"; // ver 5.1 - 10/17/2014 - changed from "Not Found"
-			coolfind.find_pointer = -1;	
+			coolfind.find_pointer = -1;
 		}
 	}
 	findwindow.style.visibility = 'visible';
-	//findwindow.style.display = 'block';	
-	
+	//findwindow.style.display = 'block';
+
 }  // end function findit()
 
 
 coolfind.findnext = function()
 {
 	var current_find;
-	
+
 	if (coolfind.find_pointer != -1) // if not first find
 	{
 		current_find = coolfind.highlights[coolfind.find_pointer];
-		
+
 		// Turn current find back to yellow
 		if (coolfind.found_highlight_rule == 1)
 			current_find.className = "highlight";
-		else 
+		else
 			current_find.style.backgroundColor = "yellow";
-	}	
-	
+	}
+
 	coolfind.find_pointer++;
-	
+
 	if (coolfind.find_pointer >= coolfind.highlights.length) // if we reached the end
 		coolfind.find_pointer = 0; // go back to first find
-	
+
 	var display_find = coolfind.find_pointer+1;
-	
+
 	cool_find_msg.innerHTML = display_find+" af "+coolfind.highlights.length;
-	
+
 	current_find = coolfind.highlights[coolfind.find_pointer];
-	
+
 	// Turn selected find orange or add .find_selected css class to it
 	if (coolfind.found_selected_rule == 1)
 			current_find.className = "find_selected";
-		else 
+		else
 			current_find.style.backgroundColor = "orange";
-			
+
 	//coolfind.highlights[find_pointer].scrollIntoView(); // Scroll to selected element
 	coolfind.scrollToPosition(coolfind.highlights[coolfind.find_pointer]);
-	
+
 } // end coolfind.coolfind.findnext()
 
 
@@ -341,63 +344,63 @@ coolfind.findprev = function()
 {
 	var cool_find_msg = document.getElementById('cool_find_msg');
 	var current_find;
-	
+
 	if (coolfind.highlights.length < 1) return;
-	
+
 	if (coolfind.find_pointer != -1) // if not first find
 	{
 		current_find = coolfind.highlights[coolfind.find_pointer];
-		
+
 		// Turn current find back to yellow
 		if (coolfind.found_highlight_rule == 1)
 			current_find.className = "highlight";
-		else 
+		else
 			current_find.style.backgroundColor = "yellow";
-	}	
-	
+	}
+
 	coolfind.find_pointer--;
-	
+
 	if (coolfind.find_pointer < 0) // if we reached the beginning
 			coolfind.find_pointer = coolfind.highlights.length-1; // go back to last find
-	
+
 	var display_find = coolfind.find_pointer+1;
-	
+
 	cool_find_msg.innerHTML = display_find+" af "+coolfind.highlights.length;
-	
+
 	current_find = coolfind.highlights[coolfind.find_pointer];
-	
+
 	// Turn selected find orange or add .find_selected css class to it
 	if (coolfind.found_selected_rule == 1)
 			current_find.className = "find_selected";
-		else 
+		else
 			current_find.style.backgroundColor = "orange";
-			
+
 	//coolfind.highlights[coolfind.find_pointer].scrollIntoView(); // Scroll to selected element
 	coolfind.scrollToPosition(coolfind.highlights[coolfind.find_pointer]);
-	
+
 } // end coolfind.coolfind.findprev()
 
 
-// This function looks for the ENTER key (13) 
+// This function looks for the ENTER key (13)
 // while the find window is open, so that if the user
 // presses ENTER it will do the find next
 coolfind.checkkey = function(e)
-{	
+{
 	var keycode;
 	if (window.event)  // if ie
 		keycode = window.event.keyCode;
 	else // if Firefox or Netscape
 		keycode = e.which;
-	
+
 	//cool_find_msg.innerHTML = keycode;
-	
+
 	if (keycode == 13) // if ENTER key
-	{	
+	{
 		// ver 5.1 - 10/17/2014 - Blur on search so keyboard closes on iphone and android
 		if (window.event && event.srcElement.id.match(/cool_find_text/i)) { event.srcElement.blur(); document.getElementById("cool_find_next").focus(); } // Version 6.0b - Added focus to find_next btn
 		else if (e && e.target.id.match(/cool_find_text/i)) { e.target.blur(); document.getElementById("cool_find_next").focus(); } // Version 6.0b - Added focus to find_next btn
 		if (document.activeElement.className != "cool_find_btn") // Version 6.0b - For accessibility, let find_next and find_prev buttons work with keyboard
-			coolfind.findit(); // call findit() function (like pressing NEXT)	
+			coolfind.findit(); // call findit() function (like pressing NEXT)
 	}
 	else if (keycode == 27) // ESC key // Ver 5.1 - 10/17/2014
 	{
@@ -415,12 +418,12 @@ coolfind.resettext = function()
 {
 	if (coolfind.find_text.toLowerCase() != document.getElementById('cool_find_text').value.toLowerCase())
 		coolfind.unhighlight(); // Remove highlights of any previous finds
-	
+
 } // end function resettext()
 
 
 coolfind.scrollToPosition = function(field)
-{  
+{
    // This function scrolls to the DIV called 'edited'
    // It is called with onload.  'edited' only exists if
    // they just edited a comment or the last comment
@@ -430,29 +433,29 @@ coolfind.scrollToPosition = function(field)
 	var scrollBottom = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) + scrollTop;
 	var scrollRight = (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) + scrollLeft;
 
-   
+
    if (field)
    {
-	   var theElement = field;  
-	   var elemPosX = theElement.offsetLeft;  
-	   var elemPosY = theElement.offsetTop;  
-	   theElement = theElement.offsetParent;  
+	   var theElement = field;
+	   var elemPosX = theElement.offsetLeft;
+	   var elemPosY = theElement.offsetTop;
+	   theElement = theElement.offsetParent;
 	   	while(theElement != null)
-	   	{  
-			elemPosX += theElement.offsetLeft   
-			elemPosY += theElement.offsetTop;  
-			theElement = theElement.offsetParent; 
-		} 
+	   	{
+			elemPosX += theElement.offsetLeft
+			elemPosY += theElement.offsetTop;
+			theElement = theElement.offsetParent;
+		}
 		// Only scroll to element if it is out of the current screen
 		if (elemPosX < scrollLeft || elemPosX > scrollRight ||
-			elemPosY < scrollTop || elemPosY > scrollBottom) 
-		//window.scrollTo(elemPosX ,elemPosY); 
+			elemPosY < scrollTop || elemPosY > scrollBottom)
+		//window.scrollTo(elemPosX ,elemPosY);
 		field.scrollIntoView();
 	}
 }  // end function scrollToPosition()
 
 
-/* It is not possible to get certain styles set in css such as display using 
+/* It is not possible to get certain styles set in css such as display using
 the normal javascript.  So we have to use this function taken from:
 http://www.quirksmode.org/dom/getstyles.html */
 coolfind.getStyle = function(el,styleProp)
@@ -468,23 +471,23 @@ coolfind.getStyle = function(el,styleProp)
 
 
 coolfind.textarea2pre = function(el)
-{		
+{
 	// el is the textarea element
-	
+
 	// If a pre has already been created for this textarea element then use it
 	if (el.nextSibling && el.nextSibling.id && el.nextSibling.id.match(/pre_/i))
 		var pre = el.nextsibling;
 	else
 		var pre = document.createElement("pre");
-	
-	var the_text = el.value; // All the text in the textarea		
-	
+
+	var the_text = el.value; // All the text in the textarea
+
 	// replace <>" with entities
 	the_text = the_text.replace(/>/g,'&gt;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
 	//var text_node = document.createTextNode(the_text); // create text node for pre with text in it
-	//pre.appendChild(text_node); // add text_node to pre			
+	//pre.appendChild(text_node); // add text_node to pre
 	pre.innerHTML = the_text;
-	
+
 	// Copy the complete HTML style from the textarea to the pre
 	var completeStyle = "";
 	if (el.currentStyle) // IE
@@ -499,28 +502,28 @@ coolfind.textarea2pre = function(el)
 	    completeStyle = window.getComputedStyle(el, null).cssText;
 		pre.style.cssText = completeStyle; // Everything copies fine in Chrome
 	}
-	
+
 	el.parentNode.insertBefore(pre, el.nextSibling); // insert pre after textarea
-	
+
 	// If textarea blur then turn pre back on and textarea off
 	el.onblur = function() { this.style.display = "none"; pre.style.display = "block"; };
 	// If textarea changes then put new value back in pre
 	el.onchange = function() { pre.innerHTML = el.value.replace(/>/g,'&gt;').replace(/</g,'&lt;').replace(/"/g,'&quot;'); };
-	
+
 	el.style.display = "none"; // hide textarea
 	pre.id = "pre_"+coolfind.highlights.length; // Add id to pre
-	
+
 	// Set onclick to turn pre off and turn textarea back on and perform a click on the textarea
 	// for a possible onclick="this.select()" for the textarea
 	pre.onclick = function() {this.style.display = "none"; el.style.display = "block"; el.focus(); el.click()};
-	
+
 	// this.parentNode.removeChild(this); // old remove pre in onclick function above
-	 
+
 } // end function textarea2pre(el)
 
 
 // ver 5.1 - 10/17/2014
-coolfind.selectElementContents = function(el) 
+coolfind.selectElementContents = function(el)
 {
     /* http://stackoverflow.com/questions/8019534/how-can-i-use-javascript-to-select-text-in-a-pre-node-block */
 	if (window.getSelection && document.createRange) {
@@ -537,7 +540,7 @@ coolfind.selectElementContents = function(el)
         textRange.select();
         //textRange.execCommand("Copy");
     }
-} // end function selectElementContents(el) 
+} // end function selectElementContents(el)
 
 
 coolfind.create_find_div();
