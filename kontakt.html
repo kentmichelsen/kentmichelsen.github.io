@@ -87,7 +87,10 @@
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 <script src="assets/js/form.js"></script> 
-<script>document.forms["contact_form"]["subject"].value = new URL(window.location.href).searchParams.get("book");</script> 
+<script>
+//document.forms["contact_form"]["subject"].value = new URL(window.location.href).searchParams.get("book");
+$('input[id=subject]').val(new URL(window.location.href).searchParams.get("book"));
+</script> 
 <script>
 var sc_project=11569174; 
 var sc_invisible=1; 
