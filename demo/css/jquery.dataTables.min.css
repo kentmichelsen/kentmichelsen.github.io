@@ -92,7 +92,7 @@ table.dataTable thead>tr>td.sorting_desc_disabled:before {
     /* bottom: 1.1em; */
     /* right: .5em; */
     top: 30%;
-    content: URL("arrow-down-short.svg");
+    content: URL("arrow-up-short.svg");
     /* object-position: center middle; */
 }
 
@@ -109,7 +109,7 @@ table.dataTable thead>tr>td.sorting_desc_disabled:after {
     /* top: 50%;
     content: "▼"*/
     top: 30%;
-    content: URL("arrow-up-short.svg");
+    content: URL("arrow-down-short.svg");
     /* object-position: center top; */
 
 
