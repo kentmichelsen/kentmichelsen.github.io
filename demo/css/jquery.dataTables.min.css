@@ -91,8 +91,9 @@ table.dataTable thead>tr>td.sorting_desc_disabled:before {
     content: "▲";*/
     /* bottom: 1.1em; */
     /* right: .5em; */
+    top: 30%;
     content: URL("arrow-down-short.svg");
-    object-position: center top;
+    /* object-position: center middle; */
 }
 
 table.dataTable thead>tr>th.sorting:after,
@@ -109,6 +110,7 @@ table.dataTable thead>tr>td.sorting_desc_disabled:after {
     content: "▼"*/
     top: 30%;
     content: URL("arrow-up-short.svg");
+    /* object-position: center top; */
 
 
 }
@@ -149,7 +151,8 @@ div.dataTables_processing {
     margin-left: -100px;
     margin-top: -26px;
     text-align: center;
-    padding: 2px
+    padding: 2px;
+    z-index: 10
 }
 
 div.dataTables_processing>div:last-child {
@@ -223,28 +226,23 @@ table.dataTable.nowrap th,
 table.dataTable.nowrap td {
     white-space: nowrap
 }
-
 table.dataTable th.dt-left,
 table.dataTable td.dt-left {
     text-align: left
 }
-
 table.dataTable th.dt-center,
 table.dataTable td.dt-center,
 table.dataTable td.dataTables_empty {
     text-align: center
 }
-
 table.dataTable th.dt-right,
 table.dataTable td.dt-right {
     text-align: right
 }
-
 table.dataTable th.dt-justify,
 table.dataTable td.dt-justify {
     text-align: justify
 }
-
 table.dataTable th.dt-nowrap,
 table.dataTable td.dt-nowrap {
     white-space: nowrap
